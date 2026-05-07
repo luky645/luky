@@ -1,103 +1,228 @@
-export default function LukasBoronWebsite() {
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-zinc-800 text-white font-sans">
-      {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center px-6 py-24">
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-4 tracking-tight">
-          Lukáš Boron
-        </h1>
-        <p className="text-xl md:text-2xl text-zinc-300 max-w-2xl">
-          16-ročný futbalista a študent športovej strednej školy v Košiciach.
-        </p>
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lukáš Boron</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-        <div className="mt-8 flex gap-4">
-          <button className="bg-white text-black px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition">
-            O mne
-          </button>
-          <button className="border border-white px-6 py-3 rounded-2xl font-semibold hover:bg-white hover:text-black transition">
-            Kontakt
-          </button>
-        </div>
-      </section>
+    body {
+      background: linear-gradient(to bottom, #000000, #18181b, #27272a);
+      color: white;
+      line-height: 1.6;
+    }
 
-      {/* About */}
-      <section className="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <img
-            src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1200&auto=format&fit=crop"
-            alt="Football"
-            className="rounded-3xl shadow-2xl w-full h-[400px] object-cover"
-          />
-        </div>
+    header {
+      text-align: center;
+      padding: 100px 20px;
+    }
 
-        <div>
-          <h2 className="text-4xl font-bold mb-6">Kto som?</h2>
-          <p className="text-zinc-300 text-lg leading-relaxed mb-4">
-            Volám sa Lukáš Boron, mám 16 rokov a mojou najväčšou vášňou je futbal.
-            Každý deň na sebe pracujem, aby som sa zlepšoval ako hráč aj ako človek.
-          </p>
-          <p className="text-zinc-300 text-lg leading-relaxed">
-            Navštevujem športovú strednú školu v Košiciach, kde spájam školu so športom.
-            Mojím cieľom je pokračovať vo futbalovej kariére a dosiahnuť veľké úspechy.
-          </p>
-        </div>
-      </section>
+    header h1 {
+      font-size: 64px;
+      margin-bottom: 20px;
+    }
 
-      {/* Skills / Interests */}
-      <section className="bg-zinc-900 py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-12">Moje záujmy</h2>
+    header p {
+      font-size: 24px;
+      color: #d4d4d8;
+    }
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-zinc-800 rounded-3xl p-8 shadow-xl hover:scale-105 transition">
-              <div className="text-5xl mb-4">⚽</div>
-              <h3 className="text-2xl font-semibold mb-3">Futbal</h3>
-              <p className="text-zinc-300">
-                Tréningy, zápasy a neustále zlepšovanie mojich schopností.
-              </p>
-            </div>
+    .buttons {
+      margin-top: 30px;
+    }
 
-            <div className="bg-zinc-800 rounded-3xl p-8 shadow-xl hover:scale-105 transition">
-              <div className="text-5xl mb-4">🏫</div>
-              <h3 className="text-2xl font-semibold mb-3">Škola</h3>
-              <p className="text-zinc-300">
-                Študujem na športovej strednej škole v Košiciach.
-              </p>
-            </div>
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 28px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-            <div className="bg-zinc-800 rounded-3xl p-8 shadow-xl hover:scale-105 transition">
-              <div className="text-5xl mb-4">🔥</div>
-              <h3 className="text-2xl font-semibold mb-3">Motivácia</h3>
-              <p className="text-zinc-300">
-                Chcem dosiahnuť úspech a nikdy sa nevzdávať.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    .btn-white {
+      background: white;
+      color: black;
+    }
 
-      {/* Contact */}
-      <section className="py-20 px-6 text-center">
-        <h2 className="text-4xl font-bold mb-6">Kontakt</h2>
-        <p className="text-zinc-300 text-lg mb-8">
-          Ak ma chceš kontaktovať alebo sledovať moju cestu, ozvi sa mi.
-        </p>
+    .btn-white:hover {
+      transform: scale(1.05);
+    }
 
-        <div className="flex justify-center gap-4 flex-wrap">
-          <button className="bg-white text-black px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition">
-            Instagram
-          </button>
+    .btn-border {
+      border: 2px solid white;
+      color: white;
+    }
 
-          <button className="border border-white px-6 py-3 rounded-2xl font-semibold hover:bg-white hover:text-black transition">
-            TikTok
-          </button>
-        </div>
-      </section>
+    .btn-border:hover {
+      background: white;
+      color: black;
+    }
 
-      {/* Footer */}
-      <footer className="border-t border-zinc-700 py-6 text-center text-zinc-400 text-sm">
-        © 2026 Lukáš Boron — Personal Website
-      </footer>
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 24px;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: #d4d4d8;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .card {
+      background: #27272a;
+      padding: 40px 20px;
+      border-radius: 24px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card .icon {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      color: #d4d4d8;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      color: #d4d4d8;
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    footer {
+      border-top: 1px solid #3f3f46;
+      text-align: center;
+      padding: 20px;
+      color: #a1a1aa;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Lukáš Boron</h1>
+    <p>16-ročný futbalista a študent športovej školy v Košiciach ⚽</p>
+
+    <div class="buttons">
+      <a href="#about" class="btn-white">O mne</a>
+      <a href="#contact" class="btn-border">Kontakt</a>
     </div>
-  );
-}
+  </header>
+
+  <section id="about" class="about">
+    <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1200&auto=format&fit=crop" alt="Futbal" />
+
+    <div class="about-text">
+      <h2>Kto som?</h2>
+
+      <p>
+        Volám sa Lukáš Boron, mám 16 rokov a futbal je moja najväčšia vášeň.
+        Každý deň na sebe pracujem, aby som bol lepší hráč aj človek.
+      </p>
+
+      <p>
+        Chodím na športovú strednú školu v Košiciach.
+        Mojím cieľom je pokračovať vo futbalovej kariére a dosiahnuť veľké úspechy.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="text-align:center; font-size:42px;">Moje záujmy</h2>
+
+    <div class="cards">
+      <div class="card">
+        <div class="icon">⚽</div>
+        <h3>Futbal</h3>
+        <p>Tréningy, zápasy a neustále zlepšovanie mojich schopností.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🏫</div>
+        <h3>Škola</h3>
+        <p>Študujem na športovej strednej škole v Košiciach.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔥</div>
+        <h3>Motivácia</h3>
+        <p>Chcem dosiahnuť úspech a nikdy sa nevzdávať.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Kontakt</h2>
+    <p>Sleduj moju cestu alebo ma kontaktuj.</p>
+
+    <div class="buttons">
+      <a href="#" class="btn-white">Instagram</a>
+      <a href="#" class="btn-border">TikTok</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Lukáš Boron — Personal Website
+  </footer>
+
+</body>
+</html>
