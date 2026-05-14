@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lukáš Boron</title>
+
   <style>
     * {
       margin: 0;
@@ -13,210 +14,300 @@
     }
 
     body {
-      background: linear-gradient(to bottom, #000000, #18181b, #27272a);
+      background: linear-gradient(to bottom, #000, #18181b, #27272a);
       color: white;
-      line-height: 1.6;
     }
 
-    header {
+    section {
+      padding: 80px 20px;
+    }
+
+    .hero {
       text-align: center;
-      padding: 100px 20px;
+      padding: 120px 20px;
     }
 
-    header h1 {
-      font-size: 64px;
+    .hero h1 {
+      font-size: 70px;
       margin-bottom: 20px;
     }
 
-    header p {
+    .hero p {
       font-size: 24px;
       color: #d4d4d8;
     }
 
     .buttons {
-      margin-top: 30px;
+      margin-top: 40px;
     }
 
-    .buttons a {
+    .btn {
       display: inline-block;
-      margin: 10px;
       padding: 14px 28px;
-      border-radius: 16px;
+      border-radius: 18px;
       text-decoration: none;
       font-weight: bold;
+      margin: 10px;
       transition: 0.3s;
     }
 
-    .btn-white {
-      background: white;
+    .green {
+      background: #22c55e;
       color: black;
     }
 
-    .btn-white:hover {
-      transform: scale(1.05);
-    }
-
-    .btn-border {
+    .outline {
       border: 2px solid white;
       color: white;
     }
 
-    .btn-border:hover {
-      background: white;
-      color: black;
+    .btn:hover {
+      transform: scale(1.05);
     }
 
-    section {
-      padding: 80px 20px;
+    .container {
       max-width: 1100px;
       margin: auto;
     }
 
     .about {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 40px;
       align-items: center;
     }
 
-    .about img {
-      width: 100%;
-      max-width: 450px;
-      border-radius: 24px;
+    .card {
+      background: #18181b;
+      border: 1px solid #3f3f46;
+      border-radius: 30px;
+      padding: 40px;
     }
 
-    .about-text {
-      flex: 1;
-    }
-
-    .about-text h2 {
-      font-size: 42px;
+    .card h3 {
       margin-bottom: 20px;
+      font-size: 30px;
     }
 
-    .about-text p {
-      color: #d4d4d8;
-      margin-bottom: 15px;
-      font-size: 18px;
+    .interests {
+      background: #09090b;
+      text-align: center;
     }
 
-    .cards {
+    .interest-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
       margin-top: 50px;
     }
 
-    .card {
-      background: #27272a;
+    .interest-box {
+      background: #18181b;
+      border: 1px solid #3f3f46;
+      border-radius: 30px;
       padding: 40px 20px;
-      border-radius: 24px;
-      text-align: center;
       transition: 0.3s;
     }
 
-    .card:hover {
+    .interest-box:hover {
       transform: translateY(-8px);
     }
 
-    .card .icon {
+    .interest-box .emoji {
       font-size: 50px;
       margin-bottom: 20px;
-    }
-
-    .card h3 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    .card p {
-      color: #d4d4d8;
     }
 
     .contact {
       text-align: center;
     }
 
-    .contact h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
+    .socials a {
+      display: inline-block;
+      padding: 16px 30px;
+      margin: 10px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
-    .contact p {
-      color: #d4d4d8;
-      margin-bottom: 30px;
-      font-size: 18px;
+    .instagram {
+      background: #ec4899;
+    }
+
+    .tiktok {
+      background: #06b6d4;
+    }
+
+    .socials a:hover {
+      transform: scale(1.05);
+    }
+
+    .game {
+      background: #18181b;
+      text-align: center;
+    }
+
+    .game-box {
+      width: 400px;
+      height: 420px;
+      background: #27272a;
+      border: 2px solid #3f3f46;
+      border-radius: 30px;
+      margin: 50px auto 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ball {
+      width: 40px;
+      height: 40px;
+      background: white;
+      border: 4px solid black;
+      border-radius: 50%;
+      position: absolute;
+      left: 180px;
+      top: 140px;
+      animation: bounce 1s infinite alternate;
+    }
+
+    .shoe {
+      position: absolute;
+      bottom: 40px;
+      left: 130px;
+      width: 150px;
+      height: 45px;
+      background: orange;
+      border: 4px solid black;
+      border-radius: 20px 50px 50px 20px;
+      transform: rotate(-15deg);
+    }
+
+    .shoe::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 5px;
+      width: 4px;
+      height: 30px;
+      background: black;
+      box-shadow: 10px 0 black, 20px 0 black;
+    }
+
+    .shoe::after {
+      content: "";
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      width: 20px;
+      height: 20px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 50%;
     }
 
     footer {
       border-top: 1px solid #3f3f46;
       text-align: center;
-      padding: 20px;
+      padding: 30px;
       color: #a1a1aa;
+    }
+
+    @keyframes bounce {
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(120px);
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <section class="hero">
     <h1>Lukáš Boron</h1>
     <p>16-ročný futbalista a študent športovej školy v Košiciach ⚽</p>
 
     <div class="buttons">
-      <a href="#about" class="btn-white">O mne</a>
-      <a href="#contact" class="btn-border">Kontakt</a>
-    </div>
-  </header>
-
-  <section id="about" class="about">
-    <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1200&auto=format&fit=crop" alt="Futbal" />
-
-    <div class="about-text">
-      <h2>Kto som?</h2>
-
-      <p>
-        Volám sa Lukáš Boron, mám 16 rokov a futbal je moja najväčšia vášeň.
-        Každý deň na sebe pracujem, aby som bol lepší hráč aj človek.
-      </p>
-
-      <p>
-        Chodím na športovú strednú školu v Košiciach.
-        Mojím cieľom je pokračovať vo futbalovej kariére a dosiahnuť veľké úspechy.
-      </p>
+      <a href="#about" class="btn green">O mne</a>
+      <a href="#contact" class="btn outline">Kontakt</a>
     </div>
   </section>
 
-  <section>
-    <h2 style="text-align:center; font-size:42px;">Moje záujmy</h2>
-
-    <div class="cards">
-      <div class="card">
-        <div class="icon">⚽</div>
-        <h3>Futbal</h3>
-        <p>Tréningy, zápasy a neustále zlepšovanie mojich schopností.</p>
+  <section id="about">
+    <div class="container about">
+      <div>
+        <h2>Kto som?</h2>
+        <br>
+        <p>
+          Volám sa Lukáš Boron, mám 16 rokov a futbal je moja najväčšia vášeň.
+          Každý deň na sebe pracujem, aby som bol lepší hráč aj človek.
+        </p>
+        <br>
+        <p>
+          Chodím na športovú strednú školu v Košiciach. Mojím cieľom je
+          pokračovať vo futbalovej kariére a dosiahnuť veľké úspechy.
+        </p>
       </div>
 
       <div class="card">
-        <div class="icon">🏫</div>
-        <h3>Škola</h3>
-        <p>Študujem na športovej strednej škole v Košiciach.</p>
+        <h3>Futbal ⚽</h3>
+        <p>
+          Futbal pre mňa nie je len šport, ale životný štýl.
+          Milujem tréningy, zápasy a neustále zlepšovanie.
+        </p>
       </div>
+    </div>
+  </section>
 
-      <div class="card">
-        <div class="icon">🔥</div>
-        <h3>Motivácia</h3>
-        <p>Chcem dosiahnuť úspech a nikdy sa nevzdávať.</p>
+  <section class="interests">
+    <div class="container">
+      <h2>Moje záujmy</h2>
+
+      <div class="interest-grid">
+        <div class="interest-box">
+          <div class="emoji">⚽</div>
+          <h3>Futbal</h3>
+          <p>Tréningy, zápasy a zlepšovanie schopností.</p>
+        </div>
+
+        <div class="interest-box">
+          <div class="emoji">🏫</div>
+          <h3>Škola</h3>
+          <p>Študujem na športovej strednej škole v Košiciach.</p>
+        </div>
+
+        <div class="interest-box">
+          <div class="emoji">🔥</div>
+          <h3>Motivácia</h3>
+          <p>Chcem dosiahnuť úspech a nikdy sa nevzdávať.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="contact" class="contact">
     <h2>Kontakt</h2>
+    <br>
     <p>Sleduj moju cestu alebo ma kontaktuj.</p>
 
-    <div class="buttons">
-      <a href="#" class="btn-white">Instagram</a>
-      <a href="#" class="btn-border">TikTok</a>
+    <div class="socials">
+      <a href="#" class="instagram">Instagram</a>
+      <a href="#" class="tiktok">TikTok</a>
+    </div>
+  </section>
+
+  <section class="game">
+    <h2>Mini hra ⚽</h2>
+    <br>
+    <p>Skús udržať loptu vo vzduchu čo najdlhšie.</p>
+
+    <div class="game-box">
+      <div class="ball"></div>
+      <div class="shoe"></div>
     </div>
   </section>
 
